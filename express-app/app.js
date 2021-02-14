@@ -12,21 +12,28 @@ app.use("/", function (req, res, next) {
   next(); //Allow to pass to next section
 });
 
+// Adding Template Engine EJS
+app.set("view engine", "ejs");
+
 app.get("/", function (req, res) {
   res.send("<html><head></head><body><h1>Hello Muteeb</h1></body></html>");
 });
 
+// app.get("/greet/:name", function (req, res) {
+//   res.send(
+//     `<html>
+//         <head>
+//             <link href=/assets/style.css type=text/css rel=stylesheet>
+//         </head>
+//         <body>
+//             <h1>Hello ${req.params.name}</h1>
+//         </body>
+//     </html>`
+//   );
+// });
+
 app.get("/greet/:name", function (req, res) {
-  res.send(
-    `<html>
-        <head>
-            <link href=/assets/style.css type=text/css rel=stylesheet>
-        </head>
-        <body>
-            <h1>Hello ${req.params.name}</h1>
-        </body>
-    </html>`
-  );
+  res.render("greet", { ID: req.params.name });
 });
 
 app.get("/api", function (req, res) {
