@@ -1,0 +1,27 @@
+<!-- ng-app is the name for angularjs -->
+<html ng-app="MeanApp">
+
+<head>
+    <title>
+        MEAN App
+    </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.js"></script>
+</head>
+
+<!-- ng-contoller is PeopleController controller for angularjs imported as vm (View Model)
+body tag is used as PeopleController then we can take inputs assigned angularjs in html as vm -->
+
+<body ng-controller="PeopleController as vm">
+    <script>
+        var clientPeople = <%- JSON.stringify(serverPeople) %>
+    </script>
+    <script src="/assets/js/app.js"></script>
+    <ul>
+        <li ng-repeat="person in vm.people">
+            {{ person.name }}
+        </li>
+    </ul>
+
+</body>
+
+</html>

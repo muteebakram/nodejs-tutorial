@@ -1,0 +1,29 @@
+<!-- ng-app is the name for angularjs -->
+<html ng-app="MeanApp">
+
+<head>
+    <title>
+        MEAN App
+    </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.js"></script>
+</head>
+
+<!-- ng-contoller is MainController controller for angularjs imported as vm (View Model)
+body tag is used as MainController then we can take inputs assigned angularjs in html as vm -->
+
+<body ng-controller="MainController as vm">
+    <script src="/assets/js/app.js"></script>
+    <h1>
+        MEAN Stack Development
+    </h1>
+    M = {{ vm.m }}
+    </br>
+    E = {{ vm.e }}
+    </br>
+    A = {{ vm.a }}
+    </br>
+    N = {{ vm.n }}
+    </br>
+</body>
+
+</html>
